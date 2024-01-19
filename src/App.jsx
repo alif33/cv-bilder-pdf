@@ -1,18 +1,24 @@
-import { PDFViewer } from '@react-pdf/renderer';
-import MyDocument from './MyDocument';
+import { 
+  HashRouter, 
+  Routes, 
+  Route
+} from "react-router-dom";
+import Home from "./pages/home";
+import Alpha from "./pages/alpha";
 import './App.css'
 
 function App() {
-  const containerStyle = {
-    width: '100%',
-    height: '100vh',
-  };
-
   return (
-    <PDFViewer style={containerStyle}>
-      <MyDocument />
-    </PDFViewer>
+    <HashRouter>
+      <Routes>
+        <Route path="/" element={<Home/>} /> 
+        <Route path="/alpha" element={<Alpha/>} /> 
+      </Routes>
+    </HashRouter>
   )
 }
 
 export default App
+
+
+
